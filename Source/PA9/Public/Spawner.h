@@ -13,7 +13,7 @@ class PA9_API ASpawner : public AActor
 GENERATED_BODY()
 
 public:	
-UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy") AEnemy* enemyInstance;
+UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EnemyClass") TSubclassOf<AActor> enemyClass;
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SpawnRadiusXLow") float spawnRadiusXLow = 500;
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SpawnRadiusXHigh") float spawnRadiusXHigh = 14300;
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SpawnRadiusYLow") float spawnRadiusYLow = 500;

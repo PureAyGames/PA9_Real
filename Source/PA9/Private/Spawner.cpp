@@ -14,14 +14,22 @@ ASpawner::ASpawner()
 // Called when the game starts or when spawned
 void ASpawner::BeginPlay()
 {
-	Super::BeginPlay();
+	//Super::BeginPlay();
 	
 }
 
 // Called every frame
 void ASpawner::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+	//Super::Tick(DeltaTime);
+
+	float x = FMath::RandRange(spawnRadiusXLow, spawnRadiusXHigh);
+	float y = FMath::RandRange(spawnRadiusYLow, spawnRadiusYHigh);
+	float z = FMath::RandRange(spawnRadiusZLow, spawnRadiusZHigh);
+	FVector spawnLocation = FVector(x, y, z);
+	FRotator spawnRotation = FRotator(0, 0, 0);
+
+	GetWorld()->SpawnActor<AActor>(enemyClass, spawnLocation, spawnRotation);
 
 }
 
